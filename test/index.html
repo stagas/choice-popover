@@ -1,0 +1,68 @@
+<!DOCTYPE 5>
+<html>
+  <head>
+    <title>ChoicePopover</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="../build/build.css" />
+    <style>
+      body {
+        padding: 60px;
+        font: 300 14px "Helvetica Neue", Helvetica, Arial;
+        min-height: 1000px;
+      }
+      a {
+        display: inline-block;
+        float: left;
+        border: 1px solid #eee;
+        padding: 10px;
+        color: black;
+        text-decoration: none;
+        margin: 55px;
+        width: 100px;
+        text-align: center;
+      }
+      .choice-popover-actions .main {
+        font-weight: bold;
+      }
+      .choice-popover-actions .cancel {
+        cursor: pointer;
+        border: none;
+        background: transparent;
+        color: gray;
+        font-size: 90%;
+        font-weight: normal;
+      }
+      .choice-popover-actions .cancel:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <title>ChoicePopover</title>
+    <script src="../build/build.js"></script>
+    <a href="#" id="auto">Auto</a>
+    <a href="#" id="auto-title">Auto Title</a>
+    <script>
+      var o = require('jquery');
+      var Choice = require('choice-popover');
+      require('popover').effect = 'fade';
+
+      var confirm = new Choice('Are you sure?');
+      confirm.show('#auto', function(choice){
+        console.log(choice);
+      });
+
+      var choices = [ 'Yes, delete him!', 'Can\'t decide :(', '@No, leave him alone!' ];
+      var confirm = new Choice('This action cannot be undone.', 'Delete tobi?', choices);
+      confirm.on(choices[0], function () {
+        alert('WHY???');
+      });
+      confirm.on('choice', function (choice){
+        console.log('event `choice`:', choice);
+      });
+      confirm.show('#auto-title', function (choice){
+        console.log('callback:', choice);
+      });
+    </script>
+  </body>
+</html>

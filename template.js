@@ -1,0 +1,1 @@
+module.exports = '<div class="choice-popover-content">\n  <div class="choice-popover-message"></div>\n  <div class="choice-popover-actions"></div>\n</div>';

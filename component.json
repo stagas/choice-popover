@@ -1,0 +1,12 @@
+{
+  "name": "choice-popover",
+  "description": "Popover choice component",
+  "version": "0.0.1",
+  "keywords": ["confirm", "confirmation", "choose", "choice", "popover", "ui"],
+  "dependencies": {
+    "component/popover": "*",
+    "component/jquery": "*"
+  },
+  "scripts": ["index.js", "template.js"],
+  "styles": ["popover.css"]
+}
