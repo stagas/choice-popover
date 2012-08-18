@@ -3,10 +3,6 @@
 
   Popover choice component built on top of [Popover](http://github.com/component/popover).
 
-## Installation
-
-```
-
 ## Features
 
   - all the features of Popover / Tip
@@ -24,7 +20,7 @@
 
   Create a new popover with `msg` and optional `title`.
 
-```js
+```javascript
 var choices = [ 'Yes, delete him!', 'Can\'t decide :(', '@No, leave him alone!' ];
 var confirm = new Choice('This action cannot be undone.', 'Delete tobi?', choices);
 confirm.show(el);
